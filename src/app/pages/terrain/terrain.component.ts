@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { read } from 'fs';
+import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
   selector: 'app-terrain',
@@ -8,38 +10,83 @@ import { read } from 'fs';
 })
 export class TerrainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ServiceService, private router: Router) { }
 
-  imgURL:any;
+  imgURL: any;
+  terrainFile: any;
 
-  terrainFile:any;
+  terrain = {
+    id: '',
+    name: '',
+    numberOfPlayer: '',
+    disponibility_from: '',
+    disponibility_to: '',
+    price: '',
+    imgFileName: '',
+    location: '',
+    description: ''
+  };
 
   ngOnInit(): void {
+    this.showtable();
   }
   //Upload Image
-  select(event:any)
-  {
+  select(event: any) {
     console.log("1")
-    if(event.target.files.length>0){
+    if (event.target.files.length > 0) {
       console.log("2")
-        const file = event.target.files[0];
-        this.terrainFile=file;
-        console.log("3")
-        var typeImage = event.target.files[0].type;
-        console.log("4")
-        if(typeImage.match(/image\/*/)==null){
-          console.log("5")
-          alert("Only Images are Supported");
-          return;
-        }
-        var readFile = new FileReader();
-        this.imgURL=file;
-        readFile.readAsDataURL(file);
-        readFile.onload = (_event) =>{
-            this.imgURL=readFile.result;
-        }
-      
+      const file = event.target.files[0];
+      this.terrainFile = file;
+      console.log("3")
+      var typeImage = event.target.files[0].type;
+      console.log("4")
+      if (typeImage.match(/image\/*/) == null) {
+        console.log("5")
+        alert("Only Images are Supported");
+        return;
+      }
+      var readFile = new FileReader();
+      this.imgURL = file;
+      readFile.readAsDataURL(file);
+      readFile.onload = (_event) => {
+        this.imgURL = readFile.result;
+      }
+
     }
   }
 
+  ajouterTerrain() {
+    const data = {
+      name: this.terrain.name,
+      numberOfPlayer: this.terrain.numberOfPlayer,
+      disponibility_from: this.terrain.disponibility_from,
+      disponibility_to: this.terrain.disponibility_to,
+      price: this.terrain.price,
+      imgFileName: this.terrain.imgFileName,
+      location: this.terrain.location,
+      description: this.terrain.description,
+    };
+
+    
+    this.service.ajouter(data,this.terrainFile).subscribe( data2 => {
+    console.log(data2)
+    //  this.router.navigate(['/articles']); 
+    });
+
+  }
+tr:any;
+  showtable() {
+    this.service.getallterrain()
+      .subscribe(
+        data => {
+          this.tr=data;
+          console.log("kaynin  " + data);
+          console.log(data)
+        },
+        error => {
+          console.log(error);
+        });
+
+  }
+  
 }

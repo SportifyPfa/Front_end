@@ -55,7 +55,7 @@
                   <h3 class="mb-0">Gestion Des Terrains</h3>
                 </div>
                 <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Ajouter</a>
+                  <button class="btn btn-sm btn-primary" (click)="ajouterTerrain()">Ajouter</button>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@
                     <div class="avatar-group" *ngIf="imgURL">
                       <a href="javascript:void(0)" class="avatar avatar-sm" data-toggle="tooltip"
                         data-original-title="Ryan Tompson">
-                        <img [src]="imgURL" alt="Image placeholder" width="19%" height="100px" class="rounded-circle">
+                        <img [src]="imgURL" alt="Image placeholder" width="19%" height="100px" class="rounded-circle"  >
                       </a>
         
                     </div>
@@ -90,7 +90,7 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Nom</label>
                     <input type="text" id="input-username" class="form-control form-control-alternative"
-                      placeholder="Nom" value="">
+                      placeholder="Nom"   [(ngModel)]="this.terrain.name" [value]="this.terrain.name"  name="name">
                   </div>
                 </div>
                 <div class="col-lg-6">
@@ -185,6 +185,10 @@
               </tr>
             </thead>
             <tbody>
+              <tr *ngFor="let t of this.tr">
+                <td>{{t.name}}</td>
+
+              </tr>
               <!-- <tr>
                   <th scope="row">
                     <div class="media align-items-center">
