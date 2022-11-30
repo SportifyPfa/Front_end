@@ -82,16 +82,12 @@ export class ServiceService {
 // xhr.send(formData)
 // }
   ajouter(terrain:any,img:any){
-        const imageFormData = new FormData();
+         img = new FormData();
         const formData: FormData = new FormData();
         formData.append('terrain', JSON.stringify(terrain));
         formData.append('img', img);
     return this.http.post(`http://localhost:8088/terrain/save`,terrain,img);
   }
-
-  // ajouter(terrain:any,img:any): Observable<any> {
-  //      return this.http.post(`http://localhost:8088/terrain/save`, terrain,img);
-  //   }
 
     getallterrain() {
       return this.http.get(`http://localhost:8088/terrain/all`);

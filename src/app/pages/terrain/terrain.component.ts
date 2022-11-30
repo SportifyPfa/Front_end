@@ -68,7 +68,7 @@ export class TerrainComponent implements OnInit {
     };
 
     
-    this.service.ajouter(data,this.terrainFile).subscribe( data2 => {
+    this.service.ajouter(data,this.imgURL).subscribe( data2 => {
     console.log(data2)
     //  this.router.navigate(['/articles']); 
     });
