@@ -46,7 +46,6 @@
   <div class="row ">
     <div class="col-xl-12 order-xl-1">
       <div class="card bg-secondary shadow">
-
         <div class="card-body">
           <form>
             <div class="card-header  ">
@@ -65,7 +64,7 @@
                 <div class="col-lg-6" >
                   <div class="form-group" >
                     <label>Image</label>
-                    <input type="file" accept="image/*" (change)="select($event)" id="input-file"  class="form-control form-control-alternative">
+                    <input type="file" accept="image/*" (change)="select($event)" id="input-file"   class="form-control form-control-alternative">
                   </div>        
                 </div>
                 <div class="col-lg-4" >
@@ -97,7 +96,7 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Nbr De Joueur</label>
                     <input type="number" id="input-last-name" class="form-control form-control-alternative"
-                      placeholder="Nombre de Joueur" value="">
+                      placeholder="Nombre de Joueur" value="" [(ngModel)]="this.terrain.numberOfPlayer" [value]="this.terrain.numberOfPlayer"  name="numberOfPlayer">
                   </div>
                 </div>
               </div>
@@ -106,54 +105,39 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-first-name">disponibility_from</label>
                     <input type="text" id="input-first-name" class="form-control form-control-alternative"
-                      placeholder="disponibility_from" value="">
+                      placeholder="disponibility_from" value="" [(ngModel)]="this.terrain.disponibility_from" [value]="this.terrain.disponibility_from"  name="disponibility_from">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">disponibility_to</label>
                     <input type="text" id="input-last-name" class="form-control form-control-alternative"
-                      placeholder="disponibility_to" value="">
+                      placeholder="disponibility_to" value="" [(ngModel)]="this.terrain.disponibility_to" [value]="this.terrain.disponibility_to"  name="disponibility_to">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">price</label>
                     <input type="number" id="input-last-name" class="form-control form-control-alternative"
-                      placeholder="Prix" value="">
+                      placeholder="Prix" value="" [(ngModel)]="this.terrain.price" [value]="this.terrain.price"  name="price">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Location</label>
                     <input type="text" id="input-last-name" class="form-control form-control-alternative"
-                      placeholder="Location" value="">
+                      placeholder="Location" value="" [(ngModel)]="this.terrain.location" [value]="this.terrain.location"  name="Location">
                   </div>
                 </div>
               </div>
             </div>
             <!-- <hr class="my-4" /> -->
             <!-- Address -->
-
-            <div class="pl-lg-4">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="form-control-label" for="input-address">Date</label>
-                    <input id="input-address" class="form-control form-control-alternative" placeholder="Date" value=""
-                      type="date">
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
             <!-- Description -->
             <div class="pl-lg-4">
               <div class="form-group">
                 <label>Description</label>
-                <textarea rows="4" class="form-control form-control-alternative" placeholder="Description"></textarea>
+                <textarea rows="4" class="form-control form-control-alternative" placeholder="Description" [(ngModel)]="this.terrain.description" [value]="this.terrain.description"  name="description" ></textarea>
               </div>
             </div>
           </form>
@@ -190,7 +174,7 @@
                   <th scope="row">
                     <div class="media align-items-center">
                       <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                        <img  [src]="t.imgfilename">
+                        <img  src="{{'http://localhost:8088/terrain/images/'+t.imgFileName}}"  >
                       </a>
                       <div class="media-body">
                         <span class="mb-0 text-sm">{{t.name}}</span>

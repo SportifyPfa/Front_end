@@ -67,11 +67,7 @@ export class TerrainComponent implements OnInit {
       description: this.terrain.description,
     };
 
-    
-    this.service.ajouter(data,this.imgURL).subscribe( data2 => {
-    console.log(data2)
-    //  this.router.navigate(['/articles']); 
-    });
+     this.service.save(data,this.terrainFile);
 
   }
 tr:any;
@@ -80,6 +76,21 @@ tr:any;
       .subscribe(
         data => {
           this.tr=data;
+          //this.showImage(this.terrain.imgFileName);
+          console.log("kaynin  " + data);
+          console.log(data)
+        },
+        error => {
+          console.log(error);
+        });
+
+  }
+img:any
+  showImage(immage:any) {
+    this.service.getImage(immage)
+      .subscribe(
+        data => {
+          this.img=data;
           console.log("kaynin  " + data);
           console.log(data)
         },
