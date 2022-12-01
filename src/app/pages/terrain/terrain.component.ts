@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { read } from 'fs';
 import { ServiceService } from 'src/app/service/service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-terrain',
@@ -30,7 +31,6 @@ export class TerrainComponent implements OnInit {
   ngOnInit(): void {
     this.showtable();
   }
-  //Upload Image
   select(event: any) {
     console.log("1")
     if (event.target.files.length > 0) {
@@ -42,7 +42,16 @@ export class TerrainComponent implements OnInit {
       console.log("4")
       if (typeImage.match(/image\/*/) == null) {
         console.log("5")
-        alert("Only Images are Supported");
+        Swal.fire({
+          icon: 'warning',
+          title: 'Only Images are Supported',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
         return;
       }
       var readFile = new FileReader();
@@ -68,10 +77,6 @@ export class TerrainComponent implements OnInit {
     };
 
      this.service.save(data,this.terrainFile);
-
-
-    //  
-
   }
 tr:any;
   showtable() {
@@ -79,7 +84,6 @@ tr:any;
       .subscribe(
         data => {
           this.tr=data;
-          //this.showImage(this.terrain.imgFileName);
           console.log("kaynin  " + data);
           console.log(data)
         },
@@ -102,5 +106,8 @@ img:any
         });
 
   }
-  
+  listeDesTerrains(){
+    this.router.navigate(['/listTerrain'])  
+
+  }
 }
