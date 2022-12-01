@@ -38,10 +38,10 @@ export class ServiceService {
   }
   //ouijdane 
   getallterrain() {
-    return this.http.get(`http://localhost:8088/terrain/all`);
+    return this.http.get(`http://localhost:8080/terrain/all`);
   }
   getImage(img: any) {
-    return this.http.get(`http://localhost:8088/terrain/images/${img}`);
+    return this.http.get(`http://localhost:8080/terrain/images/${img}`);
   }
 }
 
