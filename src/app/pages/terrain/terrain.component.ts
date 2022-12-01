@@ -74,16 +74,16 @@ export class TerrainComponent implements OnInit {
       imgFileName: this.terrain.imgFileName,
       location: this.terrain.location,
       description: this.terrain.description,
-    };
-
-     this.service.save(data,this.terrainFile);
+    };  
+    this.service.save(data, this.terrainFile);
   }
-tr:any;
+  
+  tr: any;
   showtable() {
     this.service.getallterrain()
       .subscribe(
         data => {
-          this.tr=data;
+          this.tr = data;
           console.log("kaynin  " + data);
           console.log(data)
         },
@@ -92,12 +92,13 @@ tr:any;
         });
 
   }
-img:any
-  showImage(immage:any) {
+
+  img: any
+  showImage(immage: any) {
     this.service.getImage(immage)
       .subscribe(
         data => {
-          this.img=data;
+          this.img = data;
           console.log("kaynin  " + data);
           console.log(data)
         },
@@ -106,8 +107,9 @@ img:any
         });
 
   }
-  listeDesTerrains(){
-    this.router.navigate(['/listTerrain'])  
 
+  listeDesTerrains(){
+    this.router.navigate(['/listTerrain'])
   }
+
 }
