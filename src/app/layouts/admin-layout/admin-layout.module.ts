@@ -13,6 +13,7 @@ import { UserProfileComponent } from '../../pages/user-profile/user-profile.comp
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
+import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-des-terrain.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -30,7 +31,7 @@ import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    TerrainComponent
+    TerrainComponent, ListeDesTerrainComponent
   ]
 })
 
