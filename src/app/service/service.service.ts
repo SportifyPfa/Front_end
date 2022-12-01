@@ -36,6 +36,7 @@ export class ServiceService {
       
     });
   }
+  //ouijdane 
   getallterrain() {
     return this.http.get(`http://localhost:8088/terrain/all`);
   }
