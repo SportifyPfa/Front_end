@@ -14,33 +14,33 @@ export class ServiceService {
 
   save(t: any, img: File) {
     const formData = new  FormData();
-    formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
+     formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
      formData.append('img',img); 
-    this.http
-    .post(`http://localhost:8088/terrain/save`, formData).subscribe(_ => {
-      Swal.fire({
-        icon: 'success',
-        title: 'Le terrain a bien ete ajoute',
-        showClass: {
-          popup: 'animate__animated animate__fadeInDown'
-        },
-        hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        },
-        confirmButtonText: 'OK',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.router.navigate(['/listTerrain'])  
-        } 
-      })
-      
-    });
+        this.http
+        .post(`http://localhost:8080/terrain/save`, formData).subscribe(_ => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Le terrain a bien ete ajoute',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            },
+            confirmButtonText: 'OK',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              this.router.navigate(['/listTerrain'])  
+            } 
+          })
+          
+        });
   }
   getallterrain() {
-    return this.http.get(`http://localhost:8088/terrain/all`);
+    return this.http.get(`http://localhost:8080/terrain/all`);
   }
   getImage(img: any) {
-    return this.http.get(`http://localhost:8088/terrain/images/${img}`);
+    return this.http.get(`http://localhost:8080/terrain/images/${img}`);
   }
 }
 

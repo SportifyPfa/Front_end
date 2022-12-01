@@ -31,6 +31,7 @@ export class TerrainComponent implements OnInit {
   ngOnInit(): void {
     this.showtable();
   }
+  
   select(event: any) {
     console.log("1")
     if (event.target.files.length > 0) {
