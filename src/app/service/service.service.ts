@@ -17,7 +17,8 @@ export class ServiceService {
     formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
      formData.append('img',img); 
     this.http
-    .post(`http://localhost:8080/terrain/save`, formData).subscribe(_ => {
+    .post(`http://localhost:8080/terrain/save`, formData)
+    .subscribe(_ => {
       Swal.fire({
         icon: 'success',
         title: 'Le terrain a bien ete ajoute',
@@ -34,7 +35,18 @@ export class ServiceService {
         } 
       })
       
-    });
+    }, error => Swal.fire({
+      icon: 'warning',
+      title: 'Image name already exists please change it',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+    })
+
+    );
   }
   //ouijdane 
   getallterrain() {
