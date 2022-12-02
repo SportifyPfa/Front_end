@@ -16,25 +16,39 @@ export class ServiceService {
     const formData = new  FormData();
      formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
      formData.append('img',img); 
-        this.http
-        .post(`http://localhost:8080/terrain/save`, formData).subscribe(_ => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Le terrain a bien ete ajoute',
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-            },
-            confirmButtonText: 'OK',
-          }).then((result) => {
-            if (result.isConfirmed) {
-              this.router.navigate(['/listTerrain'])  
-            } 
-          })
-          
-        });
+    this.http
+    .post(`http://localhost:8080/terrain/save`, formData)
+    .subscribe(_ => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Le terrain a bien ete ajoute',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+        confirmButtonText: 'OK',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigate(['/listTerrain'])  
+        } 
+      })
+      
+    }, error => 
+    Swal.fire({
+      icon: 'error',
+      title: 'Image name already exists please change it',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+    })
+
+    );
+
   }
   //ouijdane 
   getallterrain() {
