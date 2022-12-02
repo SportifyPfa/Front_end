@@ -54,6 +54,7 @@ export class TerrainComponent implements OnInit {
         })
         return;
       }
+      
       var readFile = new FileReader();
       this.imgURL = file;
       readFile.readAsDataURL(file);

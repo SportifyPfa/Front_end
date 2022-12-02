@@ -35,8 +35,9 @@ export class ServiceService {
         } 
       })
       
-    }, error => Swal.fire({
-      icon: 'warning',
+    }, error => 
+    Swal.fire({
+      icon: 'error',
       title: 'Image name already exists please change it',
       showClass: {
         popup: 'animate__animated animate__fadeInDown'
