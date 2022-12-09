@@ -58,7 +58,9 @@ export class ServiceService {
     return this.http.get(`http://localhost:8080/terrain/images/${img}`);
   }
 
-
+  deleteTerrain(id:any){
+    return this.http.delete(`http://localhost:8080/terrain/delete/${id}`)
+  }
 
 }
 

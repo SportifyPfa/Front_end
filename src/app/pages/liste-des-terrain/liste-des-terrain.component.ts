@@ -41,6 +41,18 @@ export class ListeDesTerrainComponent implements OnInit {
         });
 
   }
-  
+  deleteTerrainId(id: any) {
+    this.service.deleteTerrain(id)
+      .subscribe(
+        data => {
+          this.tr = data;
+          console.log("delete  " + data);
+          console.log(data)
+        },
+        error => {
+          console.log(error);
+        });
+
+  }
 
 }
