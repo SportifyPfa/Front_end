@@ -41,7 +41,6 @@ export class ListeDesTerrainComponent implements OnInit {
         });
 
   }
-
   
 
 }

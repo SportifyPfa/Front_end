@@ -57,5 +57,8 @@ export class ServiceService {
   getImage(img: any) {
     return this.http.get(`http://localhost:8080/terrain/images/${img}`);
   }
+
+
+
 }
 
