@@ -1,0 +1,159 @@
+<style>
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0;
+      background-color: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    .card-body {
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 1.5rem;
+      background-color: white;
+  }
+    .bg-gradient-danger {
+      background: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
+    }
+  
+    .btn-primary {
+      color: #fff;
+      background-color: #252c55;
+      border-color: #5e72e4;
+      box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+    }
+    .avatar-group .avatar {
+      position: relative;
+      z-index: 2;
+      border: 2px solid #fff;
+      width: 29%;
+      height: 87px;
+      /* right: 27%; */
+  }
+  .mt-5, .my-5 {
+    margin-top: 0rem !important;
+}
+
+img {
+   
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+}
+  </style>
+  
+  <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+  
+  
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!--  table -->
+  
+    <div class="row mt-5">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Listes Terrains</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">numberOfPlayer</th>
+                  <th scope="col">disponibility_from</th>
+                  <th scope="col">disponibility_to</th>
+                  <th scope="col">price</th>
+                  <th scope="col">location </th>
+                  <th scope="col">description</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>                
+               <tr *ngFor="let t of this.tr">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                          <img  src="{{'http://localhost:8080/terrain/images/'+t.imgFileName}}"  >
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.name}}</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.numberOfPlayer}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.disponibility_from}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.disponibility_to}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.price}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.location}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td scope="row">
+                      <div class="media align-items-center">
+                        
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">{{t.description}}</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-right">
+                        <div ngbDropdown  placement="bottom-right">
+                          <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
+                          <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                            <button class="dropdown-item" (click)="findbyidTerrrain(t.id)">Modifier</button>
+                            <button class="dropdown-item" >Supprimer</button>
+                          </div>
+                        </div>
+                    </td>
+               </tr> 
+              </tbody>
+            </table>
+          </div>
+         </div>
+      </div>
+    </div>
+  </div>
