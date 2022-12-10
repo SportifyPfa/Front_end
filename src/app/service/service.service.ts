@@ -48,7 +48,6 @@ export class ServiceService {
     })
 
     );
-
   }
   //ouijdane 
   getallterrain() {
@@ -62,5 +61,20 @@ export class ServiceService {
     return this.http.delete(`http://localhost:8080/terrain/delete/${id}`)
   }
 
+  //byid
+  getIdTerrain(id: any) {
+    return this.http.get(`http://localhost:8080/terrain/${id}`);
+  }
+
+  //modifier
+  modifier(id: any, terrain: any, img: File) {
+    const formData = new  FormData();
+    formData.append('terrain',new Blob([JSON.stringify(terrain)],{type:'application/json'}));
+     formData.append('img',img); 
+   return  this.http
+    .put(`http://localhost:8080/terrain/${id}`, formData)
+    
+  
+  }
 }
 

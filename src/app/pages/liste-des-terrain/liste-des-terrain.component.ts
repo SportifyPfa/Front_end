@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ServiceService } from 'src/app/service/service.service';
 })
 export class ListeDesTerrainComponent implements OnInit {
 
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: ServiceService, private router: Router,private route:ActivatedRoute) { }
   terrain = {
     id: '',
     name: '',
@@ -53,6 +54,21 @@ export class ListeDesTerrainComponent implements OnInit {
           console.log(error);
         });
 
+
+  //methode getbyid bch t recuperr row
+  findbyidTerrrain(id:any){
+    console.log("wch kydkhl")
+    this.service.getIdTerrain(id).subscribe(
+      data => {
+        this.tr=data;
+        //this.showImage(this.terrain.imgFileName);
+        console.log("kaynin list  " + data);
+        console.log(data)
+        this.router.navigate(["/updateTerrain",id]);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }
