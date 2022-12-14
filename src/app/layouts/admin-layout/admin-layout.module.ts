@@ -14,6 +14,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
 import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-des-terrain.component';
+import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terrain.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    TerrainComponent, ListeDesTerrainComponent
+    TerrainComponent, ListeDesTerrainComponent,UpdateTerrainComponent
   ]
 })
 

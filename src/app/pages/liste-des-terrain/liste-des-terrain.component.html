@@ -83,7 +83,7 @@ img {
                     <th scope="row">
                       <div class="media align-items-center">
                         <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
-                          <img  src="{{'http://localhost:8080/terrain/images/'+t.imgFileName}}"  >
+                          <img  src="{{'https://terrain-web-service.onrender.com/terrain/images/'+t.imgFileName}}"  >
                         </a>
                         <div class="media-body">
                           <span class="mb-0 text-sm">{{t.name}}</span>
@@ -144,16 +144,12 @@ img {
                             <i class="fas fa-ellipsis-v"></i>
                           </a>
                           <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                            <a class="dropdown-item" href="#">Modifier</a>
+                            <button class="dropdown-item" (click)="findbyidTerrrain(t.id)">Modifier</button>
                             <button class="dropdown-item" (click)="deleteTerrainId(t.id)">Supprimer</button>
                           </div>
                         </div>
-                    </td>                       
-                            <button class="dropdown-item" (click)="findbyidTerrrain(t.id)">Modifier</button>
-                            <button class="dropdown-item" >Supprimer</button>
-                          </div>
-                        </div>
-                    </td>
+                    </td>    
+                    
                </tr> 
               </tbody>
             </table>

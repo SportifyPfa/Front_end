@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
 
@@ -54,7 +53,7 @@ export class ListeDesTerrainComponent implements OnInit {
           console.log(error);
         });
 
-
+      }
   //methode getbyid bch t recuperr row
   findbyidTerrrain(id:any){
     console.log("wch kydkhl")

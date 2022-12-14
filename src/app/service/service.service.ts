@@ -17,7 +17,7 @@ export class ServiceService {
      formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
      formData.append('img',img); 
     this.http
-    .post(`http://localhost:8080/terrain/save`, formData)
+    .post(`https://terrain-web-service.onrender.com/terrain/save`, formData)
     .subscribe(_ => {
       Swal.fire({
         icon: 'success',
@@ -51,19 +51,19 @@ export class ServiceService {
   }
   //ouijdane 
   getallterrain() {
-    return this.http.get(`http://localhost:8080/terrain/all`);
+    return this.http.get(`https://terrain-web-service.onrender.com/terrain/all`);
   }
   getImage(img: any) {
-    return this.http.get(`http://localhost:8080/terrain/images/${img}`);
+    return this.http.get(`https://terrain-web-service.onrender.com/terrain/images/${img}`);
   }
 
   deleteTerrain(id:any){
-    return this.http.delete(`http://localhost:8080/terrain/delete/${id}`)
+    return this.http.delete(`https://terrain-web-service.onrender.com/terrain/delete/${id}`)
   }
 
   //byid
   getIdTerrain(id: any) {
-    return this.http.get(`http://localhost:8080/terrain/${id}`);
+    return this.http.get(`https://terrain-web-service.onrender.com/terrain/${id}`);
   }
 
   //modifier
@@ -72,7 +72,7 @@ export class ServiceService {
     formData.append('terrain',new Blob([JSON.stringify(terrain)],{type:'application/json'}));
      formData.append('img',img); 
    return  this.http
-    .put(`http://localhost:8080/terrain/${id}`, formData)
+    .put(`https://terrain-web-service.onrender.com/terrain/${id}`, formData)
     
   
   }
