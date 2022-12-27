@@ -1,0 +1,301 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,700&display=swap"
+  rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+<style>
+  .card-header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.5rem;
+    background-color: white;
+  }
+
+  .bg-gradient-danger {
+    background: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
+
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #252c55;
+    border-color: #5e72e4;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+  }
+
+  .avatar-group .avatar {
+    position: relative;
+    z-index: 2;
+    border: 2px solid #fff;
+    width: 29%;
+    height: 87px;
+    /* right: 27%; */
+  }
+
+  :root {
+    --bodyFont: "IBM Plex Sans", sans-serif;
+    --semiBold: 600;
+    --bold: 700;
+    --bodyBG: #e9eef6;
+    --btnBG: #0c1727;
+    --white: #fff;
+    --lightblack: #333;
+    --borderColor: #cfd4dc;
+    --black: #000;
+    --card1Gradient: linear-gradient(135deg, #f8f2f4 100%, #f9faf2 100%);
+    --card2Gradient: linear-gradient(135deg, #faf2f4 100%, #f2f4fa 100%);
+    --card3Gradient: linear-gradient(135deg, #f5f2fa 100%, #faf9f2 100%);
+    --cardShadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.26);
+  }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--lightblack);
+  }
+
+  a:hover {
+    color: var(--black);
+  }
+
+  body,
+  button {
+    font-family: var(--bodyFont);
+  }
+
+  button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1600px;
+    background-color: var(--bodyBG);
+  }
+
+  img {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: 20px;
+
+  }
+
+  p {
+
+    text-align: right;
+  }
+
+  .dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    padding: 20px 40px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 0.3rem;
+  }
+
+  .dropdown {
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .browse-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-section {
+    margin: 40px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    animation: slideInleft 1.5s ease-in 1s 1 normal none;
+
+
+  }
+
+  @keyframes slideInleft {
+    From {
+      transform: translateX(-300px);
+    }
+
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .card {
+    padding: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: rgb(243, 236, 236);
+
+  }
+
+  .card-section :hover {
+    transform: scale(1.1);
+    z-index: 1;
+    opacity: 0.8;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+
+
+  .primary-btn {
+    padding: 1rem 2rem;
+    margin: 11px 60px;
+    height: auto;
+    width: fit-content;
+    color: var(--white);
+
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
+    background: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
+    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+  }
+
+
+
+  .main-content {
+    padding: 1.5rem 0.5rem;
+  }
+
+  @media(max-width :376px) {
+    body {
+      height: 100%;
+      font-size: 13px;
+    }
+
+    .main-content {
+      padding: 1.5rem 0.5rem;
+    }
+
+    .cards-section {
+      grid-template-columns: 1fr;
+      margin: 20px 0;
+
+    }
+  }
+
+  .fullness1 {
+    color: red;
+    font-weight: bold;
+  }
+
+  .fullness2 {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .fullness3 {
+    color: green;
+    font-weight: bold;
+  }
+
+  .container-fluid {
+    background-image: url(../../../assets/img/17.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .testt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+  }
+</style>
+
+<div class="testt bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <!-- <input ngModel class="btn-primary" style="border-radius: 7%; text-align: center;" placeholder="Search" type="text" [(ngModel)]="searchText" > -->
+  <form _ngcontent-lyi-c108="" class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+    <div _ngcontent-lyi-c108="" class="form-group mb-0" ng-reflect-ng-class="[object Object]">
+      <div _ngcontent-lyi-c108="" class="input-group input-group-alternative">
+        <div _ngcontent-lyi-c108="" class="input-group-prepend"><span _ngcontent-lyi-c108="" class="input-group-text"><i
+              _ngcontent-lyi-c108="" class="fas fa-search"></i></span></div> <input ngModel _ngcontent-lyi-c108="" ngmodel=""
+          placeholder=" Search" type="text" id="datee1" class="form-control" [(ngModel)]="searchText">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div class="container-fluid mt--7">
+
+  <section class="card-section">
+
+    <tr *ngFor="let u of terrains | filter : searchText  ">
+      <div class="card card1">
+        <div class="card header">
+          <img src="{{'https://terrain-web-service.onrender.com/terrain/images/'+u.imgFileName}}" alt="">
+          <h3>{{u.name}}</h3>
+          <p><i class="fa-solid fa-map-pin"></i>{{u.location}}</p>
+          <p>{{u.disponibility_from}}h-{{u.disponibility_to}}h</p>
+        </div>
+        <div class="card-content">
+          <button class="primary-btn">Learn more</button>
+          <p class="fullness1">{{u.price}}MAD</p>
+        </div>
+      </div>
+
+
+  </section>
+</div>

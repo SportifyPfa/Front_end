@@ -65,7 +65,7 @@ export class ServiceService {
   getIdTerrain(id: any) {
     return this.http.get(`https://terrain-web-service.onrender.com/terrain/${id}`);
   }
-
+ 
   //modifier
   modifier(id: any, terrain: any, img: File) {
     const formData = new  FormData();

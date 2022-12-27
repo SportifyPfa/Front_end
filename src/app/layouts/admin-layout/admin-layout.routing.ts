@@ -8,6 +8,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
 import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-des-terrain.component';
 import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terrain.component';
+import { CarteTerrainComponent } from 'src/app/pages/carte-terrain/carte-terrain.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -17,6 +18,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'terrain',        component: TerrainComponent },
     { path: 'listTerrain',        component: ListeDesTerrainComponent },
-    { path: 'updateTerrain/:id',        component: UpdateTerrainComponent }
+    { path: 'updateTerrain/:id',        component: UpdateTerrainComponent },
+    { path: 'carte',        component: CarteTerrainComponent }
 
 ];

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { TerrainComponent } from './pages/terrain/terrain.component';
+import { IndexLayoutComponent } from './layouts/index-layout/index-layout.component';
 
 const routes: Routes =[
   {
@@ -30,7 +31,18 @@ const routes: Routes =[
         loadChildren: () => import('src/app/layouts/auth-layout/auth-layout.module').then(m => m.AuthLayoutModule)
       }
     ]
-  }, {
+  },
+  {
+    path: '',
+    component: IndexLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('src/app/layouts/index-layout/index-layout.module').then(m => m.IndexLayoutModule)
+      }
+    ]
+  }
+  , {
     path: '**',
     redirectTo: 'dashboard'
   },

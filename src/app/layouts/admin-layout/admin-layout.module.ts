@@ -15,6 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
 import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-des-terrain.component';
 import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terrain.component';
+import { CarteTerrainComponent } from 'src/app/pages/carte-terrain/carte-terrain.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -24,7 +27,8 @@ import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terr
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     DashboardComponent,
@@ -32,7 +36,7 @@ import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terr
     TablesComponent,
     IconsComponent,
     MapsComponent,
-    TerrainComponent, ListeDesTerrainComponent,UpdateTerrainComponent
+    TerrainComponent, ListeDesTerrainComponent,UpdateTerrainComponent,CarteTerrainComponent,
   ]
 })
 

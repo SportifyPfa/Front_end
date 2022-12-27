@@ -1,0 +1,309 @@
+<html>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Kumar+One');
+    @import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url(https://static.pexels.com/photos/399187/pexels-photo-399187.jpeg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    main {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    header {
+        height: 300px;
+        margin-top: 50px;
+        background-image: url("https://www.chemicalcode.com/dose/wp-content/uploads/2016/02/CUP_gif01_v1.gif");
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+
+    }
+
+    .bench {
+
+        margin-left: 100px;
+        margin-top: 140px;
+        list-style: none;
+        z-index: 20;
+    }
+
+    .pitch {
+        position: relative;
+        background-image: url(http://www.conceptdraw.com/How-To-Guide/picture/soccer-football-field-templates/End-Zone-View-Soccer-Football-Field.png);
+        opacity: 0.9;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* background-size: 70%; */
+        width: 80%;
+        margin-left: 100px;
+        margin-top: 50px;
+        list-style: none;
+
+    }
+
+
+    .joueur {
+
+        display: flex;
+        flex-direction: column-reverse;
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .joueur.titulaire {
+        position: absolute;
+        height: 150px;
+        width: 8%;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+
+    }
+
+    .joueur.banc {
+
+        margin: 20px;
+        height: 150px;
+        width: 100%;
+        text-decoration: none;
+    }
+
+    .coach {
+        margin: 20px;
+        height: 150px;
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column-reverse;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #degea {
+        background-image: url("http://bola828.org/wp-content/uploads/2014/06/David-De-Gea.jpg");
+
+    }
+
+
+    #terry {
+        background-image: url("http://1.bp.blogspot.com/-SSUavJqwFjA/USzF_RFZLII/AAAAAAAAFf4/amiiENNm1XA/s1600/John+Terry+Wallpapers+(2).jpg")
+    }
+
+    #eriksen {
+        background-image: url("http://e0.365dm.com/13/09/800x600/christian-eriksen-tottenham-hotspur_3009509.jpg?20130925124507")
+    }
+
+    #kane {
+        background-image: url("http://cdn.images.express.co.uk/img/dynamic/67/590x/Harry-Kane-726302.jpg")
+    }
+
+
+
+    #coach {
+        background-image: url("http://www.squawka.com/news/wp-content/uploads/2016/10/Antonio-Conte.jpg")
+    }
+
+    #courtois {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Courtois_aug_2014.jpg/220px-Courtois_aug_2014.jpg");
+        left: 46%;
+        bottom: 12%;
+    }
+
+    #valencia {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 25%;
+        bottom: 35%;
+    }
+
+    #bailly {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        left: 40%;
+        bottom: 30%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #matip {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 40%;
+        bottom: 30%;
+    }
+
+    #baines {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 25%;
+        bottom: 35%;
+    }
+
+    #kante {
+        background-image: url("");
+        left: 56%;
+        top: 36%;
+    }
+
+    #pogba {
+        left: 52%;
+        top: 20%;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #hazard {
+        background-image: url("https://static.independent.co.uk/s3fs-public/styles/article_small/public/thumbnails/image/2016/12/26/16/eden-hazard.jpg");
+        left: 25%;
+        top: 25%;
+    }
+
+    #alli {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+        left: 40%;
+        top: 20%;
+    }
+
+    #coutinho {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTBfhYALZ0N6Ar9Vc7qes0q4RwsJ9WvIjzBIhPbCtcizouK_MdF9gKRuDkFRcN6C3So2c&usqp=CAU");
+        background-repeat: no-repeat;
+        background-size: contain;
+        right: 27%;
+        top: 25%;
+    }
+
+    #lukaku {
+        background-image: url("http://www.africatopsports.com/wp-content/uploads/2015/12/lukaku.jpg");
+        left: 46%;
+        top: 7%;
+    }
+
+    .textebas {
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(36, 255, 180, 1);
+        justify-content: center;
+        color: rgba(90, 59, 180, 1);
+        border-radius: 3px;
+        padding: 1.9px;
+        font-family: 'Merriweather', serif;
+    }
+</style>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <ul class="bench">
+            <li>
+                <div><a class="joueur banc" id="degea">
+
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/1353/John-Terry/overview" class="joueur banc"
+                        id="terry">
+                        <div class="textebas">Terry</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/4845/Christian-Eriksen/overview" class="joueur banc"
+                        id="eriksen">
+                        <div class="textebas">Eriksen</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a class="joueur banc" id="kane">
+                        <div class="textebas"></div>
+                    </a></div>
+            </li>
+
+            <li>
+                <div> <a class="coach banc" id="coach">
+
+                    </a></div>
+            </li>
+        </ul>
+        <ul class="pitch">
+            <li>
+                <div><a href="https://www.premierleague.com/players/4911/Thibaut-Courtois/overview"
+                        class="joueur titulaire" id="courtois">
+                        <div class="textebas">Courtois</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/3285/Antonio-Valencia/overview"
+                        class="joueur titulaire" id="valencia">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/12937/Eric-Bailly/overview" class="joueur titulaire"
+                        id="bailly">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/5375/Joel-Matip/overview" class="joueur titulaire"
+                        id="matip">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/3030/Leighton-Baines/overview"
+                        class="joueur titulaire" id="baines">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+
+            <li>
+                <div><a href="https://www.premierleague.com/players/3920/Paul-Pogba/overview" class="joueur titulaire"
+                        id="pogba">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/4503/Eden-Hazard/overview" class="joueur titulaire"
+                        id="hazard">
+                        <div class="textebas">Hazard</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/9167/Dele-Alli/overview" class="joueur titulaire"
+                        id="alli">
+                        <div class="textebas">-----</div>
+                    </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/4525/Philippe-Coutinho/overview"
+                        class="joueur titulaire" id="coutinho">
+                        <div class="textebas">-----</div>
+                     </a></div>
+            </li>
+            <li>
+                <div><a href="https://www.premierleague.com/players/4290/Romelu-Lukaku/overview"
+                        class="joueur titulaire" id="lukaku">
+                        <div class="textebas">Lukaku</div>
+                    </a></div>
+            </li>
+        </ul>
+    </main>
+    
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+    *
+{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+#container
+{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #e9e9eb;
+}
+/* logo */
+#container #logo
+{
+    position: absolute;
+    left: 8%;
+    top: 30px;
+    font-size: 30px;
+    z-index: 997;
+    font-weight: bold;
+    color: #165397;
+}
+/* navbar */
+#navbar
+{
+    height: 90px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fdfefe;
+    display: grid;
+    place-items: center;
+}
+#navbar ul
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+#navbar ul li
+{
+    font-size: 20px;
+    margin: 0 45px;
+}
+#navbar ul li a
+{
+    text-decoration: none;
+    color: #000;
+}
+#navbar ul li a:hover
+{
+    color: #165397;
+}
+/* login button */
+#navbar ul #login
+{
+    height: 50px;
+    width: 120px;
+    position: absolute;
+    top: 20px;
+    right: 7%;
+    display: grid;
+    place-items: center;
+    background: #165397;
+    border-radius: 10px 20px;
+}
+#navbar ul #login a
+{
+    color: #e9e9eb;
+}
+#navbar ul #login:hover
+{
+    background: #000;
+}
+/* image */
+#image
+{
+    position: absolute;
+    top: calc(50% - 300px);
+    right: 5%;
+    z-index: 999;
+}
+#image img
+{
+    height: 600px;
+    filter: drop-shadow(-140px -140px 5px rgba(0,0,0,0.5));
+    transition: 0.5s;
+}
+#image img:hover
+{
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+
+}
+/* content */
+#content
+{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    z-index: 996;
+}
+#content h2
+{
+    font-size: 250px;
+    color: #165397;
+}
+#content:hover h2
+{
+    color: #000;
+    transition: 0.5s;
+}
+#content h4
+{
+    font-size: 70px;
+    color: #000;
+}
+#content:hover h4
+{
+    color: #165397;
+    transition: 0.5s;
+}
+/* icons */
+#icons
+{
+    height: 500px;
+    width: 65px;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 250px);
+    background: #1c5da4;
+    border-radius: 0 60px 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 998;
+}
+#icons:hover
+{
+    background: #000;
+}
+#icons a
+{
+    text-decoration: none;
+    height: 40px;
+    width: 40px;
+    font-size: 23px;
+    color: #e9e9eb;
+    display: grid;
+    place-items: center;
+    margin: 30px 0
+}
+#icons a:hover
+{
+    color: #1b66bb;
+}
+/* pagination */
+#pagination
+{
+    position: absolute;
+    bottom: 4%;
+    right: 20%;
+    z-index: 995;
+}
+#pagination a
+{
+    text-decoration: none;
+    color: #000;
+    font-size: 70px;
+    margin: 0 30px;
+    transition: 0.5s;
+}
+#pagination a:hover
+{
+    color: #165397;
+}
+/* lines */
+#line1,#line2
+{
+    height: 150px;
+    width: 60px;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    transform: skewX(-45deg);
+}
+#line2
+{
+    height: 60px;
+    left: 26%;
+}
+</style>
+<body>
+    <div id="container">
+        <!-- logo -->
+        <div id="logo">SPORTIFY</div>
+
+        <!-- navbar -->
+        <div id="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Terrain</a></li>
+                <li><a href="#">Contact</a></li>
+                <!-- login Button -->
+                <li id="login"><a href="#">Login</a></li>
+            </ul>
+        </div>
+
+        <!-- image -->
+        <div id="image">
+            <img  id="pic" src="../../../assets/img/Football_Player.png" alt="football player png">
+        </div>
+
+        <!-- content -->
+        <div id="content">
+            <h2>SPORTIFY</h2>
+            <h4>JOUER!</h4>
+        </div>
+
+        <!-- icons -->
+        <div id="icons">
+            <!-- visit => "fontawesome.com" for icons -->
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <!-- pagination -->
+        <div id="pagination">
+            <!-- left arrow -->
+            <a href="#"><i class="fas fa-angle-left" id="lft"></i></a>
+            <!-- right arrow -->
+            <a href="#"><i class="fas fa-angle-right" id="rgt"></i></a>
+        </div>
+
+        <!-- lines -->
+        <div id="line1"></div>
+        <div id="line2"></div>
+    </div>
+    <script> document.getElementById("lft").onclick = function(){
+         document.getElementById("pic").src="../../../assets/img/soccer.png" 
+    }
+    document.getElementById("rgt").onclick = function(){
+         document.getElementById("pic").src="../../../assets/img/VJB.png" 
+    }
+    </script>
+</body>
+</html>
