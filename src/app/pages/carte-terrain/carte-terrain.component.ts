@@ -28,6 +28,11 @@ export class CarteTerrainComponent implements OnInit {
       }
     )
   }
+  onClick() {
+    this.router.navigate(['/seance']);;
+  }
+  
+  
   getallterrain() {
     fetch('https://terrain-web-service.onrender.com/terrain/all', {
       method: 'GET',

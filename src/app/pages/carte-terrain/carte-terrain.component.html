@@ -265,16 +265,8 @@
 </style>
 
 <div class="testt bg-gradient-danger pb-8 pt-5 pt-md-8">
-  <!-- <input ngModel class="btn-primary" style="border-radius: 7%; text-align: center;" placeholder="Search" type="text" [(ngModel)]="searchText" > -->
-  <form _ngcontent-lyi-c108="" class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-    <div _ngcontent-lyi-c108="" class="form-group mb-0" ng-reflect-ng-class="[object Object]">
-      <div _ngcontent-lyi-c108="" class="input-group input-group-alternative">
-        <div _ngcontent-lyi-c108="" class="input-group-prepend"><span _ngcontent-lyi-c108="" class="input-group-text"><i
-              _ngcontent-lyi-c108="" class="fas fa-search"></i></span></div> <input ngModel _ngcontent-lyi-c108="" ngmodel=""
-          placeholder=" Search" type="text" id="datee1" class="form-control" [(ngModel)]="searchText">
-      </div>
-    </div>
-  </form>
+  <input ngModel class="btn-primary" style="border-radius: 7%; text-align: center;" placeholder="Search" type="text" [(ngModel)]="searchText" > 
+  
 </div>
 
 
@@ -291,7 +283,7 @@
           <p>{{u.disponibility_from}}h-{{u.disponibility_to}}h</p>
         </div>
         <div class="card-content">
-          <button class="primary-btn">Learn more</button>
+          <button class="primary-btn" (click)="onClick()">Learn more</button>
           <p class="fullness1">{{u.price}}MAD</p>
         </div>
       </div>

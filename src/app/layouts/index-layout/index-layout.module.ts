@@ -7,17 +7,25 @@ import { FormsModule } from '@angular/forms';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from 'src/app/index/home/home.component';
+import { SeanceComponent } from 'src/app/index/seance/seance.component';
+import { JouerComponent } from 'src/app/index/jouer/jouer.component';
+import { AgmCoreModule } from '@agm/core';
+
 
 
 @NgModule({
   declarations: [
-   
+   SeanceComponent, HomeComponent,
+   JouerComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(IndexLayoutroutes),
     FormsModule,
-    NgbModule
+    NgbModule, 
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDy0ytzPGCePM_5d6oPOLCqXDFO56lrGkM'
+    })
   ]
 })
 export class IndexLayoutModule { }

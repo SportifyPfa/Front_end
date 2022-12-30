@@ -10,6 +10,7 @@ import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-
 import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terrain.component';
 import { CarteTerrainComponent } from 'src/app/pages/carte-terrain/carte-terrain.component';
 
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
@@ -19,6 +20,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'terrain',        component: TerrainComponent },
     { path: 'listTerrain',        component: ListeDesTerrainComponent },
     { path: 'updateTerrain/:id',        component: UpdateTerrainComponent },
-    { path: 'carte',        component: CarteTerrainComponent }
+    { path: 'carte',        component: CarteTerrainComponent },
+    
 
 ];

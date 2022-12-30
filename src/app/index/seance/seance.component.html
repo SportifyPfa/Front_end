@@ -1,0 +1,469 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,700&display=swap"
+  rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+<style>
+  .card-header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    
+  }
+ 
+
+  .card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.5rem;
+    background-color: white;
+  }
+
+  .bg-gradient-danger {
+    background: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
+  
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #252c55;
+    border-color: #5e72e4;
+    box-shadow: 0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%);
+  }
+
+  .avatar-group .avatar {
+    position: relative;
+    z-index: 2;
+    border: 2px solid #fff;
+    width: 29%;
+    height: 87px;
+    /* right: 27%; */
+  }
+
+  :root {
+    --bodyFont: "IBM Plex Sans", sans-serif;
+    --semiBold: 600;
+    --bold: 700;
+    --bodyBG: #e9eef6;
+    --btnBG: #0c1727;
+    --white: #fff;
+    --lightblack: #333;
+    --borderColor: #cfd4dc;
+    --black: #000;
+    --card1Gradient: linear-gradient(135deg, #f8f2f4 100%, #f9faf2 100%);
+    --card2Gradient: linear-gradient(135deg, #faf2f4 100%, #f2f4fa 100%);
+    --card3Gradient: linear-gradient(135deg, #f5f2fa 100%, #faf9f2 100%);
+    --cardShadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.26);
+  }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--lightblack);
+  }
+
+  a:hover {
+    color: var(--black);
+  }
+
+  body,
+  button {
+    font-family: var(--bodyFont);
+  }
+
+  button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1600px;
+    
+  }
+
+  img {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  h1 {
+   font-family: cursive;
+   color:#5e72e4;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-top: 10px;
+    font-size: 20px;
+
+  }
+
+  p {
+
+    text-align: right;
+  }
+
+  .dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    padding: 20px 40px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 0.3rem;
+  }
+
+  .dropdown {
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .browse-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-section {
+    margin: 40px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    animation: slideInleft 1.5s ease-in 1s 1 normal none;
+    margin-bottom: 150px;
+    
+    
+    
+  }
+@keyframes slideInleft {
+  From{
+    transform: translateX(-300px);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+  .card {
+    padding: 15px;
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: rgb(243, 236, 236);
+
+    
+  }
+  .card-section :hover{
+    transform: scale(1.1);
+    z-index: 1;
+    opacity: 0.8;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+   
+  }
+
+ 
+
+  .primary-btn {
+    padding: 1rem 2rem;
+    margin: 11px 60px;
+    height: auto;
+    width: fit-content;
+    
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/1099/1099672.png);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+  }
+
+
+
+  .main-content {
+    padding: 1.5rem 0.5rem;
+  }
+
+  @media(max-width :376px) {
+    body {
+      height: 100%;
+      font-size: 13px;
+    }
+
+    .main-content {
+      padding: 1.5rem 0.5rem;
+    }
+
+    .cards-section {
+      grid-template-columns: 1fr;
+      margin: 20px 0;
+
+    }
+  }
+ 
+  .container-fl{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 10px;
+    padding-top: 100px;
+  }
+  button img {
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.search-users {
+  width: 300px;
+  height: 50px;
+  border: 2px solid #5e72e4 ;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+}
+</style>
+
+
+
+<div class="search-users">
+  <input ngModel  class="search-users" [(ngModel)]="selectedDate" [ngModelOptions]="{standalone: true}"
+
+    type="date" name="search" >
+</div>
+
+
+<div class="container-fluid mt--7">
+    
+  <div class="map">
+    
+    <agm-map [zoom]="17" [latitude]="31.794525 " [longitude]="-7.0849336" >
+      <agm-marker [latitude]="31.794525 " [longitude]="-7.0849336"></agm-marker>
+
+    </agm-map>
+    
+  </div>
+  <div class="testt">
+    <div class="container-fl ">
+
+      <section class="card-section">
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>8h-9h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>9h-10h</h1>
+            <h3 class="fullness1">7/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>10h-11h</h1>
+            <h3 class="fullness1">4/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>11h-12h</h1>
+            <h3 class="fullness1">0/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+      </section>
+      <section class="card-section">
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>12h-13h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>13h-14h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>14h-15h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>15h-16h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+      </section>
+      <section class="card-section">
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>16h-17h</h1>
+            <h3 class="fullness1" >3/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" (click)="onClick()" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>17h-18h</h1>
+            <h3 class="fullness1">4/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>19h-20h</h1>
+            <h3 class="fullness1">2/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+        <div class="card card1">
+          <div class="card header">
+            
+            <h1>20h-21h</h1>
+            <h3 class="fullness1">7/10</h3>
+            
+          </div>
+          <div class="card-content">
+            <button class="primary-btn" > <img src="https://cdn-icons-png.flaticon.com/512/1099/1099672.png" alt=""> Book now</button>
+           
+          </div>
+        </div>
+      </section>
+
+       
+
+        
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<style>
+ 
+
+  .container-fluid {
+    width: 100%;
+    background-image: url(https://img.uefa.com/imgml/uefacom/ucl/social/og-default.jpg);
+  background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+
+
+  }
+
+  .ddd {
+    color: rgb(80, 53, 19);
+  }
+</style>

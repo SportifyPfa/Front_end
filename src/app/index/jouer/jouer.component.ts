@@ -11,5 +11,9 @@ export class JouerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onClick() {
+    document.getElementById("tes").innerHTML="user"
+    
+  }
+  test:any;
 }

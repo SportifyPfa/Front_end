@@ -17,6 +17,7 @@ import { IndexLayoutComponent } from './layouts/index-layout/index-layout.compon
 import { HomeComponent } from './index/home/home.component';
 import { JouerComponent } from './index/jouer/jouer.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SeanceComponent } from './index/seance/seance.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    
     
     
   ],
@@ -37,9 +39,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AdminLayoutComponent,
     AuthLayoutComponent,
     IndexLayoutComponent,
-    HomeComponent,
-    JouerComponent,
-    
+   
     
   ],
   
