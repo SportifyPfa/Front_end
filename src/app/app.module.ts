@@ -18,6 +18,7 @@ import { HomeComponent } from './index/home/home.component';
 import { JouerComponent } from './index/jouer/jouer.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SeanceComponent } from './index/seance/seance.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SeanceComponent } from './index/seance/seance.component';
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    IndexLayoutComponent,
+    IndexLayoutComponent, 
+   
    
     
   ],

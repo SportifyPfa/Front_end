@@ -12,7 +12,8 @@ export class JouerComponent implements OnInit {
   ngOnInit(): void {
   }
   onClick() {
-    document.getElementById("tes").innerHTML="user"
+    document.getElementById("tes").innerHTML="user";
+    document.getElementById("pogba").style.backgroundImage="url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx0CIy3mIbpe2nuLRfK5xxPcwxmTvXjJsBNw&usqp=CAU)"
     
   }
   test:any;

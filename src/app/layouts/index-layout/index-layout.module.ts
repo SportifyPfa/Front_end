@@ -24,8 +24,8 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     NgbModule, 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDy0ytzPGCePM_5d6oPOLCqXDFO56lrGkM'
-    })
+      apiKey: 'AIzaSyDiuN_yW2fbUfNxQl5iaszsf-MtNWCxoNE'
+    }),
   ]
 })
 export class IndexLayoutModule { }
