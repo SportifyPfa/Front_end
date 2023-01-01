@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -23,8 +24,18 @@ export class AuthentificationJWTService {
         console.log(role)
         console.log("ouijdane")
           return this.http.post('http://localhost:8900/SPORTIFYAUTHENTIFICATION/auth/addRoleToUser', role).toPromise();
+          
        }, error => 
-          console.log("erreur")
+       Swal.fire({
+        icon: 'error',
+        title: 'this account  already exists please change it',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        },
+      })
 
        )
     } catch (error) {

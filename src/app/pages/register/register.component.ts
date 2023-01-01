@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationJWTService } from 'src/app/service/authentification-jwt.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -40,12 +41,18 @@ export class RegisterComponent implements OnInit {
       username: this.register.username,
       roleName: this.role.roleName,
 
-    }; 
-    
-   // async seve(role: string,username:any,age:any,password,genre:any) {
- 
-    this.service.seve(data2,data.username,data.age,data.password,data.genre) ;
-    //  this.service.save(data,data2)
+    };     
+    this.service.seve(data2,data.username,data.age,data.password,data.genre);
+    Swal.fire({
+      icon: 'success',
+      title: 'Bravo registerition',
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      },
+    })
   }
 
 }
