@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
             }
           });
       } else {
-        this.service.seve(data2, data.username, data.age, data.password, data.genre);
+        this.service.save(data2, data.username, data.age, data.password, data.genre);
           Swal.fire({
             icon: 'success',
             title: 'Bravo registerition',
@@ -65,6 +65,6 @@ export class RegisterComponent implements OnInit {
             }
           });
       }
-    }
+  }
 
 }

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class AuthentificationJWTService {
 
   constructor(private http: HttpClient) { }
-  async seve(role: any,username:any,age:any,password,genre:any) {
+  async save(role: any,username:any,age:any,password,genre:any) {
     try {
       const  req  = await this.http.post('http://localhost:8900/SPORTIFYAUTHENTIFICATION/auth/save_user', {
         username: username,
