@@ -15,12 +15,23 @@ export class TokenStorageService {
   }
 
   public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+    window.sessionStorage.removeItem("access_token");
+    window.sessionStorage.setItem("access_token", token);
+  }
+
+  public saveTokenRefresh(token: string): void {
+    window.sessionStorage.removeItem("refresh_token");
+    window.sessionStorage.setItem("refresh_token", token);
   }
 
   public getToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
+  }
+  public getToken2(): string | null {
+    return window.sessionStorage.getItem('refresh_token');
+  }
+  saveRefreshToken(refreshToken: string) {
+    localStorage.setItem('refresh_token', refreshToken);
   }
 
   public saveUser(user: any): void {
@@ -35,5 +46,13 @@ export class TokenStorageService {
     }
 
     return {};
+  }
+
+  getAccessToken(): string {
+    return localStorage.getItem('access_token');
+  }
+
+  getRefreshToken(): string {
+    return localStorage.getItem('refresh_token');
   }
 }
