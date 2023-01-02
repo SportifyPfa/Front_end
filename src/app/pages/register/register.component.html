@@ -43,13 +43,13 @@
           <div class="text-center text-muted mb-4">
             <small>Or sign up with credentials</small>
           </div>
-          <form role="form">
+          <form (ngSubmit)="getlogin()" role="form" ngNativeValidate>
             <div class="form-group">
               <div class="input-group input-group-alternative mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                 </div>
-                <input class="form-control" placeholder="UserName" type="text" name="username" [(ngModel)]="this.register.username" [value]="this.register.username">
+                <input class="form-control" placeholder="UserName" type="text" name="username" [(ngModel)]="this.register.username" [value]="this.register.username" required>
               </div>
             </div>
             <div class="form-group">
@@ -57,7 +57,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Age" type="number" name="age" [(ngModel)]="this.register.age" [value]="this.register.age">
+                <input class="form-control" placeholder="Age" type="number" name="age" [(ngModel)]="this.register.age" [value]="this.register.age" required>
               </div>
             </div>
             <div class="form-group">
@@ -65,7 +65,10 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                 </div>
-                <input class="form-control" placeholder="Genre" type="text" name="genre" [(ngModel)]="this.register.genre" [value]="this.register.genre">
+                <select class="form-control" placeholder="Genre"   name="role" [(ngModel)]="this.register.genre" [value]="this.register.genre" required>
+                  <option value="Femme">Femme</option>
+                  <option value="Homme">Homme</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
@@ -73,7 +76,10 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-single-02"></i></span>
                 </div>
-                <input class="form-control" placeholder="Role" type="text" name="role" [(ngModel)]="this.role.roleName" [value]="this.role.roleName" >
+                 <select class="form-control" placeholder="Role" type="text" name="role" [(ngModel)]="this.role.roleName" required>
+                  <option value="entite">entite</option>
+                  <option value="joueur">joueur</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
@@ -81,7 +87,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password"name="pass" [(ngModel)]="this.register.password" [value]="this.register.password">
+                <input class="form-control" placeholder="Password" type="password"name="pass" [(ngModel)]="this.register.password" [value]="this.register.password" required>
               </div>
             </div>
             <div class="form-group">
@@ -89,7 +95,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control" placeholder="Confirm Password"name="confirm" type="password">
+                <input class="form-control" placeholder="Confirm Password" id="confirm" [(ngModel)]="this.confirm"  name="confirm" type="password" required>
               </div>
             </div>
             <div class="text-muted font-italic"><small>password strength: <span
@@ -102,7 +108,7 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="button" class="btn btn-primary mt-4" (click)="getlogin()">Create account</button>
+              <button type="submit" class="btn btn-primary mt-4" >Create account</button>
             </div>
           </form>
         </div>

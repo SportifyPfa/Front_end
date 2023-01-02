@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthentificationJWTService } from 'src/app/service/authentification-jwt.service';
 import Swal from 'sweetalert2';
 
@@ -16,15 +16,15 @@ export class RegisterComponent implements OnInit {
     age: '',
     genre: '',
     roleName: ''
-    
+
   };
 
   role = {
-    roleName: '' 
+    roleName: ''
   };
-  
+  confirm: any;
   constructor(private service: AuthentificationJWTService) { }
-  
+
   ngOnInit() {
   }
 
@@ -35,24 +35,36 @@ export class RegisterComponent implements OnInit {
       genre: this.register.genre,
       password: this.register.password,
       roleName: this.register.roleName,
-
-    }; 
+    };
     const data2 = {
       username: this.register.username,
       roleName: this.role.roleName,
-
-    };     
-    this.service.seve(data2,data.username,data.age,data.password,data.genre);
-    Swal.fire({
-      icon: 'success',
-      title: 'Bravo registerition',
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      },
-    })
-  }
+    };
+   
+      if (data.password !== this.confirm) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Password no Compatible',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          });
+      } else {
+        this.service.seve(data2, data.username, data.age, data.password, data.genre);
+          Swal.fire({
+            icon: 'success',
+            title: 'Bravo registerition',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          });
+      }
+    }
 
 }
