@@ -42,7 +42,7 @@ export class AuthentificationJWTService {
       console.log('An error occurred while registering');
     }
   }
-
+  
   login(username: string, password: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })

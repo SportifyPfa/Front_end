@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthentificationJWTService } from 'src/app/service/authentification-jwt.service';
 import { TokenStorageService } from 'src/app/service/token-storage.service';
+import {InterceptorInterceptor} from 'src/app/interceptor/interceptor.interceptor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ import { TokenStorageService } from 'src/app/service/token-storage.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  constructor(private service: AuthentificationJWTService, private tokenService: TokenStorageService,private http: HttpClient) { }
+  constructor(private service: AuthentificationJWTService, private tokenService: TokenStorageService,private http: HttpClient,private router:Router) { }
 
   isLoggedIn = false;
   isLoginFailed = false;
@@ -65,7 +67,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log("                   ")
         console.log(this.tokenService.getUser())
         alert("bien login")
-         console.log("methode")
+        console.log("methode")
+     
+         InterceptorInterceptor.access_token = this.generate.access_token;
+         console.log( InterceptorInterceptor.access_token)
+         InterceptorInterceptor.refresh_token = this.generate.refresh_token;
+         console.log( InterceptorInterceptor.refresh_token)
+         this.router.navigate(['/dashboard']);
        
       },
       err => {

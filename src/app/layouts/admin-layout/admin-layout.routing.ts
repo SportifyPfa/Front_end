@@ -17,6 +17,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'terrain',        component: TerrainComponent },
     { path: 'listTerrain',        component: ListeDesTerrainComponent },
-    { path: 'updateTerrain/:id',        component: UpdateTerrainComponent }
+    { path: 'updateTerrain/:id',        component: UpdateTerrainComponent },
+    {
+        path: 'dashboard/icon',
+        component: IconsComponent
+    }
 
 ];
