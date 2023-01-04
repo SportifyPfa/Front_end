@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { read } from 'fs';
+import { InterceptorInterceptor } from 'src/app/interceptor/interceptor.interceptor';
 import { ServiceService } from 'src/app/service/service.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class TerrainComponent implements OnInit {
 
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: ServiceService, private tokenService: TokenStorageService,private router: Router) { }
 
   imgURL: any;
   terrainFile: any;
@@ -30,7 +32,7 @@ export class TerrainComponent implements OnInit {
 
   ngOnInit(): void {
     this.showtable();
-  }
+     }
   
   select(event: any) {
     console.log("1")
@@ -91,6 +93,8 @@ export class TerrainComponent implements OnInit {
         },
         error => {
           console.log(error);
+          //if (error.status === 403)
+         //  InterceptorInterceptor.refresh_token;
         });
 
   }

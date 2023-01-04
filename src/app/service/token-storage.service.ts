@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
@@ -8,9 +9,10 @@ const USER_KEY = 'auth-user';
 })
 export class TokenStorageService {
   
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   signOut(): void {
+    alert("session expired");
     window.sessionStorage.clear();
   }
 
@@ -24,14 +26,18 @@ export class TokenStorageService {
     window.sessionStorage.setItem("refresh_token", token);
   }
 
-  public getToken(): string | null {
-    return window.sessionStorage.getItem(TOKEN_KEY);
+  public static getToken(): string | null {
+    return window.sessionStorage.getItem("access_token");
   }
-  public getToken2(): string | null {
+  public  static getToken2(): string | null {
     return window.sessionStorage.getItem('refresh_token');
   }
-  saveRefreshToken(refreshToken: string) {
+  saveRefreshToken2(refreshToken: string) {
     localStorage.setItem('refresh_token', refreshToken);
+  }
+
+  saveAcessToken(refreshToken: string) {
+    localStorage.setItem('access_token', refreshToken);
   }
 
   public saveUser(user: any): void {
@@ -54,5 +60,11 @@ export class TokenStorageService {
 
   getRefreshToken(): string {
     return localStorage.getItem('refresh_token');
+  }
+
+
+  GenerateRefreshToken():any {
+    
+    return this.http.get('http://localhost:8900/SPORTIFYAUTHENTIFICATION/auth/refreshToken');
   }
 }
