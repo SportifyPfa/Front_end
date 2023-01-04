@@ -23,7 +23,7 @@ export class ServiceService {
      formData.append('terrain',new Blob([JSON.stringify(t)],{type:'application/json'}));
      formData.append('img',img); 
     this.http
-    .post(`https://terrain-web-service.onrender.com/terrain/save`, formData,httpOptions)
+    .post(`http://localhost:8900/SPORTIFYENTITY/terrain/save`, formData,httpOptions)
     .subscribe(_ => {
       Swal.fire({
         icon: 'success',
@@ -70,7 +70,7 @@ export class ServiceService {
         'Authorization': `Bearer ${InterceptorInterceptor.access_token}`
       })
     };
-    return this.http.get(`https://terrain-web-service.onrender.com/terrain/images/${img}`,httpOptions);
+    return this.http.get(`http://localhost:8900/SPORTIFYENTITY/terrain/images/${img}`,httpOptions);
   }
 
   deleteTerrain(id:any){
@@ -79,7 +79,7 @@ export class ServiceService {
         'Authorization': `Bearer ${InterceptorInterceptor.access_token}`
       })
     };
-    return this.http.delete(`https://terrain-web-service.onrender.com/terrain/delete/${id}`,httpOptions)
+    return this.http.delete(`http://localhost:8900/SPORTIFYENTITY/terrain/delete/${id}`,httpOptions)
   }
 
   //byid
@@ -89,7 +89,7 @@ export class ServiceService {
         'Authorization': `Bearer ${InterceptorInterceptor.access_token}`
       })
     };
-    return this.http.get(`https://terrain-web-service.onrender.com/terrain/${id}`,httpOptions);
+    return this.http.get(`http://localhost:8900/SPORTIFYENTITY/terrain/${id}`,httpOptions);
   }
 
   //modifier
@@ -103,7 +103,7 @@ export class ServiceService {
     formData.append('terrain',new Blob([JSON.stringify(terrain)],{type:'application/json'}));
      formData.append('img',img); 
    return  this.http
-    .put(`https://terrain-web-service.onrender.com/terrain/${id}`, formData,httpOptions)
+    .put(`http://localhost:8900/SPORTIFYENTITY/terrain/${id}`, formData,httpOptions)
     
   
   }
