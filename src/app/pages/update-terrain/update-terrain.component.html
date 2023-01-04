@@ -66,7 +66,7 @@
                   <div class="col-lg-6" >
                     <div class="form-group" >
                       <label>Image</label>
-                      <input type="file" accept="image/*" (change)="select($event)" id="input-file"   class="form-control form-control-alternative" required>
+                      <input type="file" accept="image/*" (change)="select($event)" id="input-file"   class="form-control form-control-alternative" >
                     </div>        
                   </div>
                   <div class="col-lg-4" >
@@ -107,14 +107,14 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">disponibility_from</label>
-                      <input type="text" id="input-first-name" class="form-control form-control-alternative"
+                      <input type="time" id="input-first-name" class="form-control form-control-alternative"
                         placeholder="disponibility_from" value="" [(ngModel)]="this.terrain.disponibility_from"  name="disponibility_from" required=True >
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-last-name">disponibility_to</label>
-                      <input type="text" id="input-last-name" class="form-control form-control-alternative"
+                      <input type="time" id="input-last-name" class="form-control form-control-alternative"
                         placeholder="disponibility_to" value="" [(ngModel)]="this.terrain.disponibility_to" name="disponibility_to" required>
                     </div>
                   </div>

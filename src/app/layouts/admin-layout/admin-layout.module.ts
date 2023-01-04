@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';import { RouterModule } from '@angular/router';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TerrainComponent } from 'src/app/pages/terrain/terrain.component';
 import { ListeDesTerrainComponent } from 'src/app/pages/liste-des-terrain/liste-des-terrain.component';
 import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terrain.component';
+import { InterceptorInterceptor } from 'src/app/interceptor/interceptor.interceptor';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -33,7 +34,14 @@ import { UpdateTerrainComponent } from 'src/app/pages/update-terrain/update-terr
     IconsComponent,
     MapsComponent,
     TerrainComponent, ListeDesTerrainComponent,UpdateTerrainComponent
-  ]
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true
+    }
+  ],
 })
 
 export class AdminLayoutModule {}

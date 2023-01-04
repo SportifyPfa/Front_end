@@ -20,30 +20,30 @@ export class InterceptorInterceptor implements HttpInterceptor {
    constructor(private securityService: AuthentificationJWTService) {}
 
   intercept(req: HttpRequest<any>,next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = InterceptorInterceptor.access_token;
+    // const token = InterceptorInterceptor.access_token;
 
-    if (token) {
-      req = this.addToken(req, token);
-      console.log('req' );
-      console.log(req );
-    }
-    console.log("ouijdane")
-    console.log(token)
-
-    return next.handle(req).pipe(
-      catchError((err) => {
-        if ( err instanceof HttpErrorResponse && (err.status === 401 || err.status === 403) ) {
-          console.log('refreshing token ...');
-          console.log('1');
-          console.log(req );
-          console.log('2');
-          return this.handle401Error(req, next);
-        }
-        // const error = err.error.message || err.statusText;
-        const error = err;
-        return throwError(() => new Error(error));
-      })      
-    )
+    // if (token) {
+    //   req = this.addToken(req, token);
+    //   console.log('req' );
+    //   console.log(req );
+    // }
+    // console.log("ouijdane")
+    // console.log(token)
+    return next.handle(req);
+    // return next.handle(req).pipe(
+    //   catchError((err) => {
+    //     if ( err instanceof HttpErrorResponse && (err.status === 401 || err.status === 403) ) {
+    //       console.log('refreshing token ...');
+    //       console.log('1');
+    //       console.log(req );
+    //       console.log('2');
+    //       return this.handle401Error(req, next);
+    //     }
+    //     // const error = err.error.message || err.statusText;
+    //     const error = err;
+    //     return throwError(() => new Error(error));
+    //   })      
+    // )
   }
 
   private addToken(request: HttpRequest<any>, token: string) {
