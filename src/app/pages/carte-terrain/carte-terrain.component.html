@@ -147,70 +147,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
-    animation: slideInleft 1.5s ease-in 1s 1 normal none;
-
-
   }
 
-  @keyframes slideInleft {
-    From {
-      transform: translateX(-300px);
-    }
-
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  .card {
-    padding: 15px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    background-color: rgb(243, 236, 236);
-
-  }
-
-  .card-section :hover {
-    transform: scale(1.1);
-    z-index: 1;
-    opacity: 0.8;
-  }
-
-  .card-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-  }
-
-
-
-  .primary-btn {
-    padding: 1rem 2rem;
-    margin: 11px 60px;
-    height: auto;
-    width: fit-content;
-    color: var(--white);
-
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    font-weight: 700;
-    color: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
-    background: linear-gradient(88deg, #19345d 53%, #000000 101%) !important;
-    background: linear-gradient(90deg, rgba(129, 230, 217, 1) 0%, rgba(79, 209, 197, 1) 100%);
-    border: none;
-    border-radius: 1000px;
-    box-shadow: 12px 12px 24px rgba(79, 209, 197, .64);
-    transition: all 0.3s ease-in-out 0s;
-    cursor: pointer;
-    outline: none;
-    padding: 10px;
-  }
 
 
 
@@ -231,6 +169,7 @@
     .cards-section {
       grid-template-columns: 1fr;
       margin: 20px 0;
+     
 
     }
   }
@@ -262,6 +201,114 @@
     justify-content: center;
     height: 250px;
   }
+  .cart {
+    position: relative;
+    width: 300px;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 15);
+    transition: 0.5s;
+  }
+
+  .cart:hover {
+    height: 420px;
+  }
+
+  .imgbx {
+    position: absolute;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 15);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .imgbx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cart:hover .imgbx {
+    width: 250px;
+    height: 250px;
+  }
+
+  .cart .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+
+  }
+  .cart .content .details {
+    padding:40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(150px);
+  }
+  .cart:hover .content .details{
+    transform: translateY(0px);
+  }
+  .cart .content .details h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #555;
+    line-height: 1.2em;
+  }
+  .cart .content .details h2 span{
+    font-size: 0.75em; 
+    font-weight: 500;
+    opacity: 0.5;
+  }
+  .cart .content .details .data{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  .cart .content .details .data h3{
+    font-size: 1em;
+    color: #555;
+    line-height: 1.2em;
+    font-weight: 600;
+  }
+  .cart .content .details .data h2{
+    color: red;
+  }
+  .cart .content .details .data h3 span{
+    font-size: 0.85em;
+    opacity: 0.5;
+    font-weight: 400;
+  }
+  .cart .content .details .actionBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart .content .details .actionBtn button{
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    background: #5e72e4;
+    color: #fff;
+    cursor: pointer;
+  }
 </style>
 
 <div class="testt bg-gradient-danger pb-8 pt-5 pt-md-8">
@@ -275,19 +322,23 @@
   <section class="card-section">
 
     <tr *ngFor="let u of terrains | filter : searchText  ">
-      <div class="card card1">
-        <div class="card header">
-          <img src="{{'https://terrain-web-service.onrender.com/terrain/images/'+u.imgFileName}}" alt="">
-          <h3>{{u.name}}</h3>
-          <p><i class="fa-solid fa-map-pin"></i>{{u.location}}</p>
-          <p>{{u.disponibility_from}}h-{{u.disponibility_to}}h</p>
-        </div>
-        <div class="card-content">
-          <button class="primary-btn" (click)="onClick()">Learn more</button>
-          <p class="fullness1">{{u.price}}MAD</p>
+      <div class="cart">
+        <div class="imgbx"> <img src="{{'https://terrain-web-service.onrender.com/terrain/images/'+u.imgFileName}}" alt=""></div>
+        <div class="content">
+          <div class="details">
+            <h2>{{u.name}}<br><span>{{u.location}}</span></h2>
+            <div class="data">
+              <h3>FROM <br> <span>{{u.disponibility_from}}h</span></h3>
+              <h2>{{u.price}}MAD</h2>
+              <h3>TO <br> <span>{{u.disponibility_to}}h</span></h3>
+            </div>
+            <div class="actionBtn">
+              <button (click)="onClick()">Learn more</button>
+            </div>
+          </div>
         </div>
       </div>
-
+      
 
   </section>
 </div>

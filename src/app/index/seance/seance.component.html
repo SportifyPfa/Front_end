@@ -8,6 +8,7 @@
   rel="stylesheet">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiuN_yW2fbUfNxQl5iaszsf-MtNWCxoNE"></script>
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   .card-header {
     padding: 1.25rem 1.5rem;
@@ -156,20 +157,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
-    animation: slideInleft 1.5s ease-in 1s 1 normal none;
+    
     margin-bottom: 150px;
     
     
     
   }
-@keyframes slideInleft {
-  From{
-    transform: translateX(-300px);
-  }
-  to{
-    transform: translateX(0);
-  }
-}
+
+
   .card {
     padding: 15px;
     width: 250px;
@@ -458,7 +453,8 @@
 
 
   }
-
+  
+ 
   .ddd {
     color: rgb(80, 53, 19);
   }

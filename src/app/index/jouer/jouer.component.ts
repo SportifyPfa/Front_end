@@ -18,3 +18,5 @@ export class JouerComponent implements OnInit {
   }
   test:any;
 }
+
+ 
