@@ -32,6 +32,9 @@ export class TerrainComponent implements OnInit {
 
   ngOnInit(): void {
     this.showtable();
+    if(this.tokenService.isUserLoggedIn()==false){
+      this.router.navigate(['/login'])
+    }
      }
   
   select(event: any) {

@@ -38,7 +38,9 @@ export class NavbarComponent implements OnInit {
           this.router.navigate(['/login']);
         }
       });
-
+      if(this.tokenService.isUserLoggedIn()==false){
+        this.router.navigate(['/login'])
+      }
   }
   getTitle(){
     var titlee = this.location.prepareExternalUrl(this.location.path());

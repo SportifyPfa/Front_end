@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class UpdateTerrainComponent implements OnInit {
 
-  constructor(private service: ServiceService, private router: Router,private route:ActivatedRoute) { }
+  constructor(private service: ServiceService,private tokenService: TokenStorageService, private router: Router,private route:ActivatedRoute) { }
 
   id:any;
   terrain:any;
@@ -19,6 +20,9 @@ export class UpdateTerrainComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if(this.tokenService.isUserLoggedIn()==false){
+      this.router.navigate(['/login'])
+    }
     //dkchi li f whatt
     this.id=this.route.snapshot.params['id'];
     this.service.getIdTerrain(this.id).subscribe(

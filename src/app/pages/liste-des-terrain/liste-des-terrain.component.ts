@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from 'src/app/service/service.service';
+import { TokenStorageService } from 'src/app/service/token-storage.service';
 
 @Component({
   selector: 'app-liste-des-terrain',
@@ -8,8 +9,7 @@ import { ServiceService } from 'src/app/service/service.service';
   styleUrls: ['./liste-des-terrain.component.css']
 })
 export class ListeDesTerrainComponent implements OnInit {
-
-  constructor(private service: ServiceService, private router: Router,private route:ActivatedRoute) { }
+  constructor(private service: ServiceService,private tokenService:TokenStorageService, private router: Router,private route:ActivatedRoute) { }
   terrain = {
     id: '',
     name: '',
@@ -24,6 +24,9 @@ export class ListeDesTerrainComponent implements OnInit {
 
   ngOnInit(): void {
     this.showtable();
+    if(this.tokenService.isUserLoggedIn()==false){
+      this.router.navigate(['/login'])
+    }
   }
 
   tr:any;
@@ -48,6 +51,7 @@ export class ListeDesTerrainComponent implements OnInit {
           this.tr = data;
           console.log("delete  " + data);
           console.log(data)
+          this.showtable();
         },
         error => {
           console.log(error);

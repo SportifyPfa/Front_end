@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { AuthentificationJWTService } from 'src/app/service/authentification-jwt.service';
 import Swal from 'sweetalert2';
 
@@ -23,7 +24,7 @@ export class RegisterComponent implements OnInit {
     roleName: ''
   };
   confirm: any;
-  constructor(private service: AuthentificationJWTService) { }
+  constructor(private service: AuthentificationJWTService,private router :Router) { }
 
   ngOnInit() {
   }
@@ -64,6 +65,8 @@ export class RegisterComponent implements OnInit {
               popup: 'animate__animated animate__fadeOutUp'
             }
           });
+          this.router.navigate(['/login'])  
+
       }
   }
 

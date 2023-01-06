@@ -62,7 +62,13 @@ export class TokenStorageService {
     return localStorage.getItem('refresh_token');
   }
 
-
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem(USER_KEY)
+    console.log(!(user === null));
+    if (user === null){  return false }
+      
+  return true;
+  }
   GenerateRefreshToken():any {
     
     return this.http.get('http://localhost:8900/SPORTIFYAUTHENTIFICATION/auth/refreshToken');

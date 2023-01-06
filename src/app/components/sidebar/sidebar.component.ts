@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { TokenStorageService } from 'src/app/service/token-storage.service';
+import { HttpClient,HttpHeaders, HttpEventType } from '@angular/common/http';
+import { InterceptorInterceptor } from 'src/app/interceptor/interceptor.interceptor';
 declare interface RouteInfo {
     path: string;
     title: string;
@@ -30,12 +32,37 @@ export class SidebarComponent implements OnInit {
   public menuItems: any[];
   public isCollapsed = true;
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private tokenService:TokenStorageService,private http:HttpClient) { }
+  message:any;
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
    });
+   this.tokenService.getUser();
+   const httpOptions = {
+     headers: new HttpHeaders({
+       'Authorization': `Bearer ${InterceptorInterceptor.access_token}`
+     })
+   };
+   this.http.get('http://localhost:8900/SPORTIFYAUTHENTIFICATION/auth/user_auth',httpOptions)
+     .subscribe({
+       next: (res: any) => {
+         this.message = `Hi ${res.username}`;
+       },
+       error: () => {
+         this.router.navigate(['/login']);
+       }
+     });
+     if(this.tokenService.isUserLoggedIn()==false){
+       this.router.navigate(['/login'])
+     }
+  }
+  logout(){
+    
+    window.sessionStorage.clear();
+    window.localStorage.clear();
+    console.log("ok");
+    this.router.navigate(['/login']);
   }
 }
